@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href=""> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./script.js" type="text/javascript"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="login_box">
+
+        <h1>LOGIN</h1>
+        <div class="login_input">
+            <label class="lab" for="username">Username</label>
+            <input type="text" name="username" >
+            <!-- <span class="span_animate"> </span> -->
+            
+            <div class="span_animate">
+                <span data-placeholder="Username"></span>
+            </div>
+        </div>
+        <div class="login_input">
+            <label class="lab" for="password">Password</label>
+            <input type="password" name="password"  >
+            <div class="span_animate">
+                <span data-placeholder="Username"></span>
+            </div>
+            
+        </div>
+        <button class="login_btn" type="submit"  >Login</button>
+        <div class="bottom-text">
+            Don't have account? <a href="#">Sign up</a>
+        </div>
+
+    </div>
+
+    <div class="copy-right">
+        &copy Dhawal Patel
+    </div>
+
+    <script type="text/javascript">
+       
+    //    $(document).ready(function(){
+            //   jQuery methods go here...
+            // $(".login_input input + label").hover(function(){
+                // alert("heloow")
+                // print(input)
+                // alert(typeof(input));
+                // input.addClass("move");
+                // this.addClass("move");
+                // $(".login_input label[type={input}]").addClass("move");
+
+                // $(".login_input label").css("")    .css("transform: translate(0,-1.2rem ) scale(1);");
+
+            // });
+
+            // if(not($(".login_input").hover)==true){
+            //     $("label").removeClass("move");
+            // }
+            $(".login_input input").focus(function(){
+            
+                if($(this).attr("name") == "password"){
+                    $(this).attr("placeholder","Enter Password");
+                } 
+                else if ($(this).attr("name") == "username") {
+                    $(this).attr("placeholder","Enter Username");
+                }
+            
+            });
+            $(".login_input input").focusout(function(){
+            
+                $(this).attr("placeholder","")
+                $(this).siblings(".lab").removeClass("move");
+
+            // if($(this).attr("name") == "password"){
+            
+            // } 
+        
+        });
+
+
+                
+
+            $(".login_input input").mouseenter(function(){
+                // alert("helo")
+                $(this).siblings(".lab").addClass("move");
+                $(this).siblings(".span_animate").css("background","linear-gradient(240deg, #8e44ad,#27ae60)");
+
+                // $(this).siblings(".span_animate").css("background: linear-gradient(0deg, #8e44ad,#27ae60)");
+
+                $(this).attr("placeholder","")
+            
+            });
+
+            $(".login_input input").mouseleave(function(){
+            //    console.log($(this).focus);
+                $(this).siblings(".span_animate").css("background","linear-gradient(120deg, #8e44ad,#27ae60)");
+
+                if($(this).is(":focus") == false){
+                    $(this).siblings(".lab").removeClass("move");
+
+                }     
+            });
+
+        // });
+
+
+       
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+body{
+    font-family: "inter", sans-serif;
+    display: block;
+    align-items: center;
+    /* text-align: center; */
+    height: 100vh;
+    background: linear-gradient(120deg, #8e44ad,#27ae60);
+    text-align: center;
+}
+
+label, input, .span_animate {
+    transition: all 0.4s;
+    touch-action: manipulation;
+  }
+
+.login_box{
+    background: rgba(255, 255, 255, 0.315);
+    width: 300px;
+    min-height: 300px;
+    margin: 100px auto;
+    border-radius: 10px;
+}
+h1{
+    padding: 20px;
+    /* margin: 200px auto; */
+}
+.login_input{
+
+    /* display: flex; */
+    /* flex-flow: column-reverse; */
+    /* margin-bottom: 1em; */
+
+    /* display: flex; */
+    margin: 20px auto;
+    width: 240px;
+    height:22px;
+    border-bottom: 2px solid #adadad;
+
+}
+
+.login_input input{
+    /* background: none; */
+    -webkit-appearance: none; 
+    background: none;    
+    border: none;
+    outline: none;
+    /* margin-bottom: 10px ; */
+    height: 20px;
+    width: 230px;
+    font-size: 14;
+    text-align: left;
+}
+
+
+
+label{
+    position: absolute;
+    /* color: red; */
+    /* transform: translate(0, 0) scale(1); */
+    transform: translate(0,0 ) scale(1);
+    
+    /* transform: translate(0,-1.2rem ) scale(1); */
+    transform-origin: left bottom;
+
+}
+.move{
+    color: rgba(0, 0, 0, 0.404);
+    transform: translate(0,-1.2rem ) scale(1);
+    /* transform: translate(0, 0) scale(1); */
+    cursor: pointer;
+    
+}
+/* 
+input:focus::-webkit-input-placeholder {
+    opacity: 1;
+  } */
+
+/* ::-webkit-input-placeholder {
+opacity: 0;
+transition: inherit;
+} */
+
+/* input:focus:: */
+/* input:focus::-webkit-input-placeholder {
+    opacity: 1;
+  } */
+
+
+
+input:placeholder-shown + label {
+  
+    /* transform: translate(0, 2.125rem) scale(1.5); */
+    transform: translate(0,-1.2rem ) scale(1);
+    color : yellow;
+    /* transform: translate(0, 0) scale(1); */
+    /* cursor: pointer; */
+    /* color: red; */
+    /* top: -50%; */
+    /* transform: translate(-100%); */
+}
+
+/* label  */
+
+.span_animate{
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(120deg, #8e44ad,#27ae60);
+    /* background: #27ae60; */
+}
+
+input.hover + .span_animate{
+    background: linear-gradient(240deg, #8e44ad,#27ae60);
+
+}
+
+.login_btn{
+    background: #27ae60;
+    border: none;
+    outline: none;
+    padding: 10px 10px;
+    width: 100px;
+    border-radius: 5px;
+}
+
+.login_btn:hover{
+    transition: 0.5s;
+    background: #8e44ad;
+}
